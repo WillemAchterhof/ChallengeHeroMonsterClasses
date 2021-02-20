@@ -11,7 +11,31 @@ namespace ChallengeHeroMonsterClasses
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Player Hero = PlayerFactory.Create();
+			Player Monster = PlayerFactory.Create();
 
+			Hero.Name = "Hero";
+			Hero.Health = 200;
+			Hero.DamageMaximun = 20;
+			Hero.AttackBonus = true;
+
+			Monster.Name = "Monster";
+			Monster.Health = 200;
+			Monster.DamageMaximun = 15;
+			Monster.AttackBonus = false;
+
+			resultLabel.Text += DisplayResult.PlayerStats(Monster);
+			resultLabel.Text += DisplayResult.PlayerStats(Hero);
+
+			int heroDamage = Hero.Attack();
+			int monsterDamage = Monster.Attack();
+
+			Monster.Defend(heroDamage);
+			Hero.Defend(monsterDamage);
+
+			resultLabel.Text += DisplayResult.RoundNumber(1);
+			resultLabel.Text += DisplayResult.Battle(Hero, Monster, heroDamage, Monster.Health);
+			resultLabel.Text += DisplayResult.Battle(Monster, Hero, monsterDamage, Hero.Health);
 		}
 	}
 }
