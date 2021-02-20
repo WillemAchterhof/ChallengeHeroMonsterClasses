@@ -24,18 +24,18 @@ namespace ChallengeHeroMonsterClasses
 			Monster.DamageMaximun = 15;
 			Monster.AttackBonus = false;
 
-			resultLabel.Text += DisplayResult.PlayerStats(Monster);
-			resultLabel.Text += DisplayResult.PlayerStats(Hero);
-
 			int heroDamage = Hero.Attack();
 			int monsterDamage = Monster.Attack();
 
 			Monster.Defend(heroDamage);
 			Hero.Defend(monsterDamage);
 
-			resultLabel.Text += DisplayResult.RoundNumber(1);
-			resultLabel.Text += DisplayResult.Battle(Hero, Monster, heroDamage, Monster.Health);
-			resultLabel.Text += DisplayResult.Battle(Monster, Hero, monsterDamage, Hero.Health);
+			resultLabel.Text =
+				DisplayResult.PlayerStats(Hero) +
+				DisplayResult.PlayerStats(Monster) +
+				DisplayResult.RoundNumber(1) +
+				DisplayResult.Battle(Hero, Monster, heroDamage, Monster.Health) + 
+				DisplayResult.Battle(Monster, Hero, monsterDamage, Hero.Health);
 		}
 	}
 }
