@@ -79,12 +79,14 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewDice.cs" />
     <Compile Include="DisplayResult.cs" />
+    <Compile Include="FactoryDice.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerFactory.cs" />
+    <Compile Include="NewPlayer.cs" />
+    <Compile Include="FactoryPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
