@@ -12,9 +12,11 @@ namespace ChallengeHeroMonsterClasses
 		public int DamageMaximum { get; set; }
 		public bool AttackBonus { get; set; }
 
-		public int Attack(int _rollResult,  int _mainHandWeapon = 0, int _offHandWeapon = 0)
+		public int Attack(NewDice _dice)
 		{
-			int _damage =  _rollResult + _mainHandWeapon + _offHandWeapon;
+			_dice.Sides = DamageMaximum;
+			
+			int _damage = _dice.Roll();
 
 			return _damage;
 		}

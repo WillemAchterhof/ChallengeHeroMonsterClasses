@@ -12,7 +12,7 @@ namespace ChallengeHeroMonsterClasses
 		{
 			result = string.Format($"Name: {_player.Name}<br />" +
 				$"Healht: {_player.Health}<br />" +
-				$"Max Damage: {_player.DamageMaximun}<br />" +
+				$"Max Damage: {_player.DamageMaximum}<br />" +
 				$"Attack Bonus: {_player.AttackBonus}<br /><br />");
 
 			return result;

@@ -10,19 +10,11 @@ namespace ChallengeHeroMonsterClasses
 		public int Sides { get; set; }
 
 		private Random rollDice = new Random();
-		public int Roll(int _sides)
+		public int Roll()
 		{
-			int _eyesNumber = rollDice.Next(1, _sides);
+			int _eyesNumber = rollDice.Next(1, this.Sides);
 
 			return _eyesNumber;
-		}
-		public NewDice()
-		{
-			this.Sides = 0;
-		}
-		public NewDice(NewPlayer _player)
-		{
-			this.Sides = _player.DamageMaximum;
 		}
 	}
 }
