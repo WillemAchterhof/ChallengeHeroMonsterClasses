@@ -5,11 +5,11 @@ using System.Web;
 
 namespace ChallengeHeroMonsterClasses
 {
-	public class PlayerFactory
+	public static class FactoryPlayer
 	{
-		static public Player Create()
+		static public NewPlayer Create()
 		{
-			return new Player();
+			return new NewPlayer();
 		}
 	}
 }

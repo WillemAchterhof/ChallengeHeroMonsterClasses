@@ -5,18 +5,16 @@ using System.Web;
 
 namespace ChallengeHeroMonsterClasses
 {
-	public class Player
+	public class NewPlayer
 	{
 		public string Name { get; set; }
 		public int Health { get; set; }
-		public int DamageMaximun { get; set; }
+		public int DamageMaximum { get; set; }
 		public bool AttackBonus { get; set; }
 
-		Random assingnDamage = new Random();
-
-		public int Attack()
+		public int Attack(int _rollResult,  int _mainHandWeapon = 0, int _offHandWeapon = 0)
 		{
-			int _damage = assingnDamage.Next(this.DamageMaximun);
+			int _damage =  _rollResult + _mainHandWeapon + _offHandWeapon;
 
 			return _damage;
 		}
