@@ -25,15 +25,36 @@ namespace ChallengeHeroMonsterClasses
 		}
 		public static string BonusRound()
 		{
-			result = string.Format($"<hr />Bonus Round<br />>");
+			result = string.Format($"<hr />Bonus Round<br /><br />");
 
 			return result;
 		}
 		public static string Battle(NewPlayer _playerAtacker, NewPlayer _playerDefender, int _damage, int _health)
 		{
-			result = string.Format($"The {_playerAtacker.Name} deals {_damage} damage to the {_playerDefender.Name}." +
-				$"<br />{_playerDefender.Name} has {_health} health left.<br /><br />");
+			if (_health < 0)
+			{
+				_health = 0;
+			}
 
+			result = string.Format($"The {_playerAtacker.Name} deals {_damage} damage to the {_playerDefender.Name}." +
+				$"&nbsp;{_playerDefender.Name} has {_health} health left.<br /><br />");
+
+			return result;
+		}
+		public static string BattleFinished(NewPlayer _hero, NewPlayer _monster)
+		{
+			if (_hero.Health > 0)
+			{
+				result = string.Format($"<hr />The {_hero.Name} defeats the {_monster.Name}.");
+			}
+			else if (_monster.Health> 0)
+			{
+				result = string.Format($"<hr />The {_monster.Name} defeats the {_hero.Name}.");
+			}
+			else
+			{
+				result =  string.Format($"<hr />They're both dead!");
+			}
 			return result;
 		}
 	}

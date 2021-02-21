@@ -11,5 +11,9 @@ namespace ChallengeHeroMonsterClasses
 		{
 			return new NewDice();
 		}
+		public static NewDice Create(int _sides	)
+		{
+			return new NewDice(_sides);
+		}
 	}
 }
