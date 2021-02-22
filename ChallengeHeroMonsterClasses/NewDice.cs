@@ -16,13 +16,5 @@ namespace ChallengeHeroMonsterClasses
 
 			return _eyesNumber;
 		}
-		public NewDice()
-		{
-			this.Sides = 0;
-		}
-		public NewDice(int _sides)
-		{
-			this.Sides = _sides;
-		}
 	}
 }

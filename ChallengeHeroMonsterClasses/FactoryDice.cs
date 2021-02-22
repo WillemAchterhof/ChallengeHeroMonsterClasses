@@ -11,8 +11,9 @@ namespace ChallengeHeroMonsterClasses
 		{
 			return new NewDice();
 		}
-		public static NewDice Create(int _sides	)
+		public static NewDice Create(NewPlayer _player)
 		{
+                        NewDice.Sides = _player.DamageMaximum;
 			return new NewDice(_sides);
 		}
 	}
