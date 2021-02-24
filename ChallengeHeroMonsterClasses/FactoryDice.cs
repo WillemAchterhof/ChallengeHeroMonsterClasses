@@ -6,14 +6,17 @@ using System.Web;
 namespace ChallengeHeroMonsterClasses
 {
 	public static class FactoryDice
-	{ 
+	{
 		 public static NewDice Create()
 		{
 			return new NewDice();
 		}
 		public static NewDice Create(NewPlayer _player)
 		{
-                        NewDice.Sides = _player.DamageMaximum;
+			return new NewDice(_player);
+		}
+		public static NewDice Create(int _sides)
+		{
 			return new NewDice(_sides);
 		}
 	}

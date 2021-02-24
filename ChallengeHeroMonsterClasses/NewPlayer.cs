@@ -14,8 +14,6 @@ namespace ChallengeHeroMonsterClasses
 
 		public int Attack(NewDice _dice)
 		{
-			_dice.Sides = DamageMaximum;
-			
 			int _damage = _dice.Roll();
 
 			return _damage;
