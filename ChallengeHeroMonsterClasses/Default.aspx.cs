@@ -39,17 +39,17 @@ namespace ChallengeHeroMonsterClasses
 			{
 				roundCount++;
 
-				int heroDamage = Hero.Attack(DiceHero);
-				int monsterDamage = Monster.Attack(DiceMonster);
+				int heroDamage = Roll(DiceHero);
+				int monsterDamage = Roll(DiceMonster);
 
-				if (Hero.AttackBonus && DiceBonusAttack.Roll() == 5)
+				if (Hero.AttackBonus && Roll(DiceHero) == 5)
 				{
 					Monster.Defend(heroDamage); 
 					result +=
 						DisplayResult.BonusRound() +
 						DisplayResult.Battle(Hero, Monster, heroDamage, Monster.Health);
 				}
-				if (Monster.AttackBonus && DiceBonusAttack.Roll() == 1)
+				if (Monster.AttackBonus && Roll(DiceMonster) == 1)
 				{
 					Hero.Defend(monsterDamage); 
 					result +=
@@ -68,6 +68,14 @@ namespace ChallengeHeroMonsterClasses
 			result += DisplayResult.BattleFinished(Hero, Monster);
 
 			resultLabel.Text = result;
+		}
+
+		private Random rollDice = new Random();
+		public int Roll(NewDice _dice)
+		{
+			int _eyesNumber = rollDice.Next(1, _dice.Sides);
+
+			return _eyesNumber;
 		}
 	}
 }

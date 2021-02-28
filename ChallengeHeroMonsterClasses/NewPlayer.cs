@@ -12,12 +12,6 @@ namespace ChallengeHeroMonsterClasses
 		public int DamageMaximum { get; set; }
 		public bool AttackBonus { get; set; }
 
-		public int Attack(NewDice _dice)
-		{
-			int _damage = _dice.Roll();
-
-			return _damage;
-		}
 		public void Defend(int _damage)
 		{
 			this.Health -= _damage;

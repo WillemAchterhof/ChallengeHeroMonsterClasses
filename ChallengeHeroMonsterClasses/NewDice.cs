@@ -9,7 +9,6 @@ namespace ChallengeHeroMonsterClasses
 	{
 		public int Sides { get; set; }
 
-		private Random rollDice = new Random();
 		public NewDice(int _sides = 0)
 		{
 			this.Sides = _sides;
@@ -17,12 +16,6 @@ namespace ChallengeHeroMonsterClasses
 		public NewDice(NewPlayer _player)
 		{
 			this.Sides = _player.DamageMaximum;
-		}
-		public int Roll()
-		{
-			int _eyesNumber = rollDice.Next(1, this.Sides);
-
-			return _eyesNumber;
 		}
 	}
 }
